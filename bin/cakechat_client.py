@@ -36,7 +36,7 @@ class TkinterGUIExample(tk.Tk):
         self.respond.grid(column=0, row=0, sticky='nesw', padx=3, pady=3)
 
         self.usr_input = ttk.Entry(self, state='normal')
-        self.usr_input.grid(column=1, row=0, sticky='nesw', padx=3, pady=3)
+        self.usr_input.grid(column=1, row=0, sticky='nesw', padx=3, pady=3, columnspan=4,)
         
         self.neutral = ttk.Radiobutton(
             self,
@@ -45,15 +45,16 @@ class TkinterGUIExample(tk.Tk):
             value = "neutral",
             
         )
-        self.neutral.grid(column = 0, row  = 2)
+        self.neutral.grid(column = 0, row  = 7, columnspan=1,)
         self.anger = ttk.Radiobutton(
             self,
             text = "Anger",
+            
             variable = self.emotion,
             value = "anger",
             
         )
-        self.anger.grid(column = 0, row  = 3)
+        self.anger.grid(column = 1, row  = 7, columnspan=1,)
         self.joy = ttk.Radiobutton(
             self,
             text = "Joy",
@@ -61,7 +62,7 @@ class TkinterGUIExample(tk.Tk):
             value = "joy",
             
         )
-        self.joy.grid(column = 0, row  = 4)
+        self.joy.grid(column = 2, row  = 7, columnspan=1,)
         self.fear = ttk.Radiobutton(
             self,
             text = "Fear",
@@ -69,7 +70,7 @@ class TkinterGUIExample(tk.Tk):
             value = "fear",
             
         )
-        self.fear.grid(column = 0, row  = 5)
+        self.fear.grid(column = 3, row  = 7, columnspan=1,)
         self.saddness = ttk.Radiobutton(
             self,
             text = "Saddness",
@@ -77,14 +78,14 @@ class TkinterGUIExample(tk.Tk):
             value = "saddness",
             
         )
-        self.saddness.grid(column = 0, row  = 6)
+        self.saddness.grid(column = 4, row  = 7, columnspan=1,)
         self.conversation_lbl = ttk.Label(
             self, anchor=tk.E, text='Conversation:')
         self.conversation_lbl.grid(
             column=0, row=1, sticky='nesw', padx=3, pady=3)
 
         self.conversation = ScrolledText.ScrolledText(self, state='disabled')
-        self.conversation.grid(column=0, row=7, columnspan=2,
+        self.conversation.grid(column=0, row=8, columnspan=5,
                                sticky='nesw', padx=3, pady=3)
 
     def makeRequest(self):
